@@ -3,10 +3,10 @@ import dotenv from 'dotenv';
 
 dotenv.config();
 
-const port = process.env.PORT || 8000;
+const port = process.env.PORT || 5000;
 
 app.listen(port, ()=> {
-    console.log(`Server Started on Port ${port}`);
+    console.log(`The server has started on port ${port}`);
 });
 
 export default app;
