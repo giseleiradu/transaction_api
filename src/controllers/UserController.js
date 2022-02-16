@@ -93,7 +93,6 @@ class Users {
                 (parseInt(profile.USD) - parseInt(amount)):
                 ((role==="receiver")?
                 (parseInt(profile.USD)+ parseInt(amount)):(console.log('simbyumva!!!')))
-                console.log('updatedAmount', updatedAmount)
                 const res = await User.updateOne(
                 { email: profile.email },
                 { $set: { USD: updatedAmount } },
@@ -105,7 +104,6 @@ class Users {
                 (parseInt(profile.EUR) - parseInt(amount)):
                 ((role==="receiver")?
                 (parseInt(profile.EUR)+ parseInt(amount)):(console.log('simbyumva!!!')))
-                console.log('updatedAmount', updatedAmount)
                 const res = await User.updateOne(
                 { email: profile.email },
                 { $set: { EUR: updatedAmount } },
@@ -116,7 +114,6 @@ class Users {
                 (parseInt(profile.NGN) - parseInt(amount)):
                 ((role==="receiver")?
                 (parseInt(profile.NGN)+ parseInt(amount)):(console.log('simbyumva!!!')))
-                console.log('updatedAmount', updatedAmount)
                 const res = await User.updateOne(
                 { email: profile.email },
                 { $set: { NGN: updatedAmount } },

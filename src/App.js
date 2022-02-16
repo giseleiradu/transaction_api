@@ -3,8 +3,8 @@ const app = express();
 import mongoose from 'mongoose';
 import dotenv from 'dotenv';
 import cors from 'cors';
-import userRoute from './routes/userRoutes.js';
-import transactionRoutes from './routes/TransactionRoutes.js';
+import userRoute from './routes/userRoutes';
+import transactionRoutes from './routes/transactionRoutes';
 
 dotenv.config();
 
