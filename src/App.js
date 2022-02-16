@@ -2,9 +2,16 @@ import express from 'express';
 const app = express();
 import mongoose from 'mongoose';
 import dotenv from 'dotenv';
+import cors from 'cors';
+import userRoute from './routes/userRoutes.js';
+import transactionRoutes from './routes/TransactionRoutes.js';
 
 dotenv.config();
 
+const corsOptions = {
+    origin: '*', 
+    optionsSuccessStatus: 200
+}
 
 mongoose.connect(process.env.DB_CONNECTION, { useNewUrlParser: true, useUnifiedTopology: true }).then(()=> {
         
@@ -12,6 +19,9 @@ mongoose.connect(process.env.DB_CONNECTION, { useNewUrlParser: true, useUnifiedT
     
 });
 
+
 app.use(express.json());
+app.use('/api', cors(corsOptions), userRoute);
+app.use('/api', cors(corsOptions), transactionRoutes);
 
 export default app;
