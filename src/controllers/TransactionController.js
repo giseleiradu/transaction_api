@@ -40,9 +40,11 @@ class TransactionController {
             const receiver = await Users.updateUser(
                 transaction.receiverEmail,
                 "receiver",
-                transaction.convertedAmountt,
+                transaction.convertedAmount,
                 transaction.receivingCurrency,
             )
+
+            res.status(200).json({ transaction });
             
             } catch (error) {
             res.status(error.status).json({
